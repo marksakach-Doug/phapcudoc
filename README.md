@@ -11,16 +11,6 @@ Built with AI coding assistance and hand edits.
 | `index.html` | Page structure, styling, and reader logic |
 | `verses.json` | All chapter titles and verse text (Vietnamese and English) |
 
-## Run locally
-
-Browsers block loading `verses.json` when you open `index.html` by double-clicking it. Start a local server instead:
-
-```bash
-python3 -m http.server
-```
-
-Then open <http://localhost:8000>.
-
 ## Data format
 
 ```json
@@ -39,7 +29,7 @@ To fix a typo or change wording, edit `verses.json`; no code changes are needed.
 
 ## Credits and text sources
 
-- **Vietnamese:** verse translation by HT. Thích Minh Châu. Source: *[add where you got the text]*.
+- **Vietnamese:** verse translation by HT. Thích Minh Châu. Source: https://phatgiaoaluoi.com/news/Tu-hoc/Kinh-Phap-Cu-Ban-dich-cua-HT-Thich-Minh-Chau-5554/
 - **English:** F. Max Müller, *The Dhammapada*, in *Sacred Books of the East*, vol. 10 (1881). Public domain.
 
 > **Before making this repository public:** confirm you have permission to republish the Vietnamese text (check the terms on the site you copied it from), or keep the repository private.
