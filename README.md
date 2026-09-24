@@ -25,7 +25,7 @@ Built with AI coding assistance and hand edits.
 }
 ```
 
-To fix a typo or change wording, edit `verses.json`; no code changes are needed.
+To fix a typo or change wording, edit `verses.json`.
 
 ## Credits and text sources
 
@@ -36,4 +36,4 @@ To fix a typo or change wording, edit `verses.json`; no code changes are needed.
 ## Notes
 
 - The reader remembers your last chapter using your browser's `localStorage`.
-- Six adjacent verse pairs (58/59, 87/88, 104/105, 153/154, 195/196, 229/230) show the same English text, which appears to follow Müller's combined renderings.
+- Six adjacent verse pairs (58/59, 87/88, 104/105, 153/154, 195/196, 229/230) show the same English text, which follows Müller's combined renderings.
