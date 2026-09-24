@@ -21,12 +21,6 @@ python3 -m http.server
 
 Then open <http://localhost:8000>.
 
-## Publish with GitHub Pages
-
-1. Push these files to a GitHub repository.
-2. In the repository, go to **Settings → Pages**.
-3. Under **Build and deployment**, choose **Deploy from a branch**, select `main` and `/ (root)`, and save.
-
 ## Data format
 
 ```json
