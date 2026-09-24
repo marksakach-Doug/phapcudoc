@@ -32,7 +32,6 @@ To fix a typo or change wording, edit `verses.json`; no code changes are needed.
 - **Vietnamese:** verse translation by HT. Thích Minh Châu. Source: https://phatgiaoaluoi.com/news/Tu-hoc/Kinh-Phap-Cu-Ban-dich-cua-HT-Thich-Minh-Chau-5554/
 - **English:** F. Max Müller, *The Dhammapada*, in *Sacred Books of the East*, vol. 10 (1881). Public domain.
 
-> **Before making this repository public:** confirm you have permission to republish the Vietnamese text (check the terms on the site you copied it from), or keep the repository private.
 
 ## Notes
 
