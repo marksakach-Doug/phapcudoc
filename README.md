@@ -1,4 +1,4 @@
-# Kinh Pháp Cú — Bilingual Dhammapada Reader
+# Pháp Cú Đọc — Bilingual Dhammapada Reader
 
 A small, mobile-friendly web reader for the Dhammapada (423 verses, 26 chapters). Each verse is shown in Vietnamese, with an English translation one tap away for comparison.
 
