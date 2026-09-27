@@ -162,6 +162,7 @@
     chapterSelect += '</select></div>';
 
     var chapterMeta = CHAPTERS.filter(function (ch) { return ch.id === activeChapter; })[0];
+    var chapRange = lang === 'en' ? (chapterMeta.range_en || chapterMeta.range) : chapterMeta.range;
     var header = '<div class="chapter-range">' + escapeHtml(chapRange) + '</div>';
 
     var verses = VERSES.filter(function (v) { return v.chapter === activeChapter; });
