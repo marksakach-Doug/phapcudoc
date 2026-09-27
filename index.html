@@ -171,9 +171,13 @@
       cards = '<div class="verse-card" style="text-align:center; color: var(--muted);"><p>' + escapeHtml(t.empty) + '</p></div>';
     } else if (lang === 'en') {
       cards = verses.map(function (v) {
+        var isOpen = !!expanded[v.number];
         return '<div class="verse-card">' +
           '<div class="verse-num">' + t.verseLabel + v.number + '</div>' +
           '<p class="verse-vi" lang="en">' + escapeHtml(v.en) + '</p>' +
+          '<button class="verse-toggle" data-verse="' + v.number + '" aria-expanded="' + isOpen + '">' +
+            (isOpen ? t.hideEn : t.showEn) + '</button>' +
+          (isOpen ? '<div class="verse-en">' + escapeHtml(v.vi) + '</div>' : '') +
           '</div>';
       }).join('');
     } else {
