@@ -156,12 +156,13 @@
     var chapterSelect = '<div class="chapter-select-wrapper"><select id="chapter-select" class="chapter-dropdown">';
     CHAPTERS.forEach(function (ch) {
       var isSelected = ch.id === activeChapter ? ' selected' : '';
-      chapterSelect += '<option value="' + ch.id + '"' + isSelected + '>' + escapeHtml(ch.title) + '</option>';
+      var label = lang === 'en' ? (ch.title_en || ch.title) : ch.title;
+      chapterSelect += '<option value="' + ch.id + '"' + isSelected + '>' + escapeHtml(label) + '</option>';;
     });
     chapterSelect += '</select></div>';
 
     var chapterMeta = CHAPTERS.filter(function (ch) { return ch.id === activeChapter; })[0];
-    var header = '<div class="chapter-range">' + escapeHtml(chapterMeta.range) + '</div>';
+    var header = '<div class="chapter-range">' + escapeHtml(chapRange) + '</div>';
 
     var verses = VERSES.filter(function (v) { return v.chapter === activeChapter; });
     var cards = '';
