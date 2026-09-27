@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Kinh Pháp Cú — Đọc</title>
+<title>Kinh Pháp Cú — Dhammapada</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,440;9..144,560;9..144,620&family=Be+Vietnam+Pro:wght@400;500;600&display=swap" rel="stylesheet">
@@ -71,7 +71,7 @@
     <rect x="10" y="27" width="14" height="2.4" rx="1.2" fill="#8f99b3"/>
     <rect x="13" y="30" width="8" height="2" rx="1" fill="#8f99b3" opacity="0.7"/>
   </svg>
-  <h1>Kinh Pháp Cú</h1>
+  <h1 id="page-title">Kinh Pháp Cú</h1>
   <p class="subtitle" id="subtitle">Bản dịch thơ — HT. Thích Minh Châu. Chạm "Xem tiếng Anh" (F. Max Müller) để đối chiếu.</p>
   <div class="lang-switch">
     <button class="lang-btn" id="lang-vi" data-lang="vi" title="Tiếng Việt">🇻🇳</button>
@@ -90,6 +90,7 @@
 
   var UI = {
     vi: {
+      title: 'Kinh Pháp Cú',
       subtitle: 'Bản dịch thơ — HT. Thích Minh Châu. Chạm "Xem tiếng Anh" (F. Max Müller) để đối chiếu.',
       verseLabel: 'câu ',
       showEn: 'Xem tiếng Anh',
@@ -99,7 +100,8 @@
       loadError: 'Không tải được dữ liệu (verses.json).'
     },
     en: {
-      subtitle: 'Verse translation — Thanissaro Bhikkhu / F. Max Müller.',
+      title: 'Dhammapada',
+      subtitle: 'Verse translation — F. Max Müller. Press "Show Vietnamese" (HT. Thích Minh Châu) to compare.',
       verseLabel: 'verse ',
       showEn: 'Show Vietnamese',
       hideEn: 'Hide Vietnamese',
@@ -112,6 +114,7 @@
   function setLang(l) {
     lang = l;
     expanded = {};
+    document.getElementById('page-title').textContent = UI[lang].title;
     document.getElementById('subtitle').textContent = UI[lang].subtitle;
     document.getElementById('lang-vi').classList.toggle('active', lang === 'vi');
     document.getElementById('lang-en').classList.toggle('active', lang === 'en');
