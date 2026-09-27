@@ -30,9 +30,9 @@
   h1 { font-family: 'Fraunces', serif; font-weight: 560; font-size: clamp(1.4rem, 5vw, 1.85rem); text-align: center; margin: 0 0 4px; letter-spacing: -0.01em; }
   .subtitle { text-align: center; color: var(--muted); font-size: 0.88rem; margin: 0 0 20px; line-height: 1.5; }
   
-  .lang-switch { display: flex; justify-content: center; gap: 8px; margin-bottom: 14px; }
-  .lang-btn { background: var(--bg-panel); border: 1px solid var(--border-soft); color: var(--muted); padding: 5px 12px; border-radius: 20px; font-family: inherit; font-size: 1.1rem; cursor: pointer; line-height: 1.2; }
-  .lang-btn.active { border-color: var(--flame); color: var(--parchment); }
+  .lang-switch { position: fixed; top: 14px; right: 14px; display: flex; gap: 4px; z-index: 10; }
+  .lang-btn { background: var(--bg-panel); border: 1px solid var(--border-soft); color: var(--muted); padding: 2px 6px; border-radius: 12px; font-family: inherit; font-size: 0.75rem; cursor: pointer; line-height: 1.4; opacity: 0.75; }
+  .lang-btn.active { border-color: var(--flame); color: var(--parchment); opacity: 1; }
 
   .chapter-select-wrapper { text-align: center; margin-bottom: 26px; }
   .chapter-dropdown { 
@@ -74,8 +74,8 @@
   <h1>Kinh Pháp Cú</h1>
   <p class="subtitle" id="subtitle">Bản dịch thơ — HT. Thích Minh Châu. Chạm "Xem tiếng Anh" (F. Max Müller) để đối chiếu.</p>
   <div class="lang-switch">
-    <button class="lang-btn" id="lang-vi" data-lang="vi">🇻🇳 VN</button>
-    <button class="lang-btn" id="lang-en" data-lang="en">🇬🇧 EN</button>
+    <button class="lang-btn" id="lang-vi" data-lang="vi" title="Tiếng Việt">🇻🇳</button>
+    <button class="lang-btn" id="lang-en" data-lang="en" title="English">🇬🇧</button>
   </div>
   <div id="app"><p class="subtitle">Đang tải…</p></div>
 </div>
@@ -99,7 +99,7 @@
       loadError: 'Không tải được dữ liệu (verses.json).'
     },
     en: {
-      subtitle: 'Verse translation — F. Max Müller.',
+      subtitle: 'Verse translation — Thanissaro Bhikkhu / F. Max Müller.',
       verseLabel: 'verse ',
       showEn: 'Show Vietnamese',
       hideEn: 'Hide Vietnamese',
