@@ -7,132 +7,184 @@
     {
       "id": "I",
       "title": "I. Song Yếu",
+      "title_en": "The Twin-Verses",
       "range": "câu 1–20"
+      "range_en": "verses 1–20"
     },
     {
       "id": "II",
       "title": "II. Không Phóng Dật",
+      "title_en": "On Earnestness",
       "range": "câu 21–32"
+      "range_en": "verses 21–32"
     },
     {
       "id": "III",
       "title": "III. Tâm",
+      "title_en": "Thought",
       "range": "câu 33–43"
+      "range_en": "verses 33–43"
     },
     {
       "id": "IV",
       "title": "IV. Hoa",
+      "title_en": "Flowers",
       "range": "câu 44–59"
+      "range_en": "verses 44–59"
     },
     {
       "id": "V",
       "title": "V. Ngu",
+      "title_en": "The Fool",
       "range": "câu 60–75"
+      "range_en": "verses 60–75"
     },
     {
       "id": "VI",
       "title": "VI. Trí",
+      "title_en": "The Wise Man (Pandita)",
       "range": "câu 76–89"
+      "range_en": "verses 76–89"
     },
     {
       "id": "VII",
       "title": "VII. A-la-hán",
+      "title_en": "The Venerable (Arhat)",
       "range": "câu 90–99"
+      "range_en": "verses 90–99"
     },
     {
       "id": "VIII",
       "title": "VIII. Ngàn",
+      "title_en": "The Thousands",
       "range": "câu 100–115"
+      "range_en": "verses 100–115"
     },
     {
       "id": "IX",
       "title": "IX. Ác",
+      "title_en": "Evil",
       "range": "câu 116–128"
+      "range_en": "verses 116–128"
     },
     {
       "id": "X",
       "title": "X. Hình Phạt",
+      "title_en": "Punishment",
       "range": "câu 129–145"
+      "range_en": "verses 129–145"
     },
     {
       "id": "XI",
       "title": "XI. Già",
+      "title_en": "Old Age",
       "range": "câu 146–156"
+      "range_en": "verses 146–156"
     },
     {
       "id": "XII",
       "title": "XII. Tự Ngã",
+      "title_en": "Self",
       "range": "câu 157–166"
+      "range_en": "verses 157–166"
     },
     {
       "id": "XIII",
       "title": "XIII. Thế Gian",
+      "title_en": "The World",
       "range": "câu 167–178"
+      "range_en": "verses 167–178"
     },
     {
       "id": "XIV",
       "title": "XIV. Phật",
+      "title_en": "The Buddha (The Awakened)",
       "range": "câu 179–196"
+      "range_en": "verses 179–196"
     },
     {
       "id": "XV",
       "title": "XV. An Lạc",
+      "title_en": "Happiness",
       "range": "câu 197–208"
+      "range_en": "verses 197–208"
     },
     {
       "id": "XVI",
       "title": "XVI. Hỷ Ái",
+      "title_en": "Pleasure",
       "range": "câu 209–220"
+      "range_en": "verses 209–220"
     },
     {
       "id": "XVII",
       "title": "XVII. Phẫn Nộ",
+      "title_en": "Anger",
       "range": "câu 221–234"
+      "range_en": "verses 221–234"
     },
     {
       "id": "XVIII",
       "title": "XVIII. Cấu Uế",
+      "title_en": "Impurity",
       "range": "câu 235–255"
+      "range_en": "verses 235–255"
     },
     {
       "id": "XIX",
       "title": "XIX. Pháp Trụ",
+      "title_en": "The Just",
       "range": "câu 256–272"
+      "range_en": "verses 256–272"
     },
     {
       "id": "XX",
       "title": "XX. Đạo",
+      "title_en": "The Way",
       "range": "câu 273–289"
+      "range_en": "verses 273–289"
     },
     {
       "id": "XXI",
       "title": "XXI. Tạp Lục",
+      "title_en": "Miscellaneous",
       "range": "câu 290–305"
+      "range_en": "verses 290–305"
     },
     {
       "id": "XXII",
       "title": "XXII. Địa Ngục",
+      "title_en": "The Downward Course",
       "range": "câu 306–319"
+      "range_en": "verses 306–319"
     },
     {
       "id": "XXIII",
       "title": "XXIII. Voi",
+      "title_en": "The Elephant",
       "range": "câu 320–333"
+      "range_en": "verses 320–333"
     },
     {
       "id": "XXIV",
       "title": "XXIV. Tham Ái",
+      "title_en": "Thirst",
       "range": "câu 334–359"
+      "range_en": "verses 334–359"
     },
     {
       "id": "XXV",
       "title": "XXV. Tỷ-kheo",
+      "title_en": "The Bhikshu (Mendicant)",
       "range": "câu 360–382"
+      "range_en": "verses 360–382"
     },
     {
       "id": "XXVI",
       "title": "XXVI. Bà-la-môn",
+      "title_en": "The Brahmana (Arhat)",
       "range": "câu 383–423"
+      "range_en": "verses 383–423"
     }
   ],
   "verses": [
