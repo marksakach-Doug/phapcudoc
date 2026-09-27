@@ -30,6 +30,10 @@
   h1 { font-family: 'Fraunces', serif; font-weight: 560; font-size: clamp(1.4rem, 5vw, 1.85rem); text-align: center; margin: 0 0 4px; letter-spacing: -0.01em; }
   .subtitle { text-align: center; color: var(--muted); font-size: 0.88rem; margin: 0 0 20px; line-height: 1.5; }
   
+  .lang-switch { display: flex; justify-content: center; gap: 8px; margin-bottom: 14px; }
+  .lang-btn { background: var(--bg-panel); border: 1px solid var(--border-soft); color: var(--muted); padding: 5px 12px; border-radius: 20px; font-family: inherit; font-size: 1.1rem; cursor: pointer; line-height: 1.2; }
+  .lang-btn.active { border-color: var(--flame); color: var(--parchment); }
+
   .chapter-select-wrapper { text-align: center; margin-bottom: 26px; }
   .chapter-dropdown { 
     appearance: none; 
@@ -68,7 +72,11 @@
     <rect x="13" y="30" width="8" height="2" rx="1" fill="#8f99b3" opacity="0.7"/>
   </svg>
   <h1>Kinh Pháp Cú</h1>
-  <p class="subtitle">Bản dịch thơ — HT. Thích Minh Châu. Chạm "Xem tiếng Anh" (F. Max Müller) để đối chiếu.</p>
+  <p class="subtitle" id="subtitle">Bản dịch thơ — HT. Thích Minh Châu. Chạm "Xem tiếng Anh" (F. Max Müller) để đối chiếu.</p>
+  <div class="lang-switch">
+    <button class="lang-btn" id="lang-vi" data-lang="vi">🇻🇳 VN</button>
+    <button class="lang-btn" id="lang-en" data-lang="en">🇬🇧 EN</button>
+  </div>
   <div id="app"><p class="subtitle">Đang tải…</p></div>
 </div>
 <script>
@@ -78,6 +86,37 @@
   var VERSES = [];
   var activeChapter = 'I';
   var expanded = {};
+  var lang = 'vi';
+
+  var UI = {
+    vi: {
+      subtitle: 'Bản dịch thơ — HT. Thích Minh Châu. Chạm "Xem tiếng Anh" (F. Max Müller) để đối chiếu.',
+      verseLabel: 'câu ',
+      showEn: 'Xem tiếng Anh',
+      hideEn: 'Ẩn tiếng Anh',
+      empty: 'Chưa có dữ liệu cho phẩm này.',
+      loading: 'Đang tải…',
+      loadError: 'Không tải được dữ liệu (verses.json).'
+    },
+    en: {
+      subtitle: 'Verse translation — Thanissaro Bhikkhu / F. Max Müller.',
+      verseLabel: 'verse ',
+      showEn: 'Show Vietnamese',
+      hideEn: 'Hide Vietnamese',
+      empty: 'No verses available for this chapter yet.',
+      loading: 'Loading…',
+      loadError: 'Could not load data (verses.json).'
+    }
+  };
+
+  function setLang(l) {
+    lang = l;
+    expanded = {};
+    document.getElementById('subtitle').textContent = UI[lang].subtitle;
+    document.getElementById('lang-vi').classList.toggle('active', lang === 'vi');
+    document.getElementById('lang-en').classList.toggle('active', lang === 'en');
+    render();
+  }
 
   function escapeHtml(s) {
     return (s || '').replace(/[&<>"']/g, function (c) {
@@ -126,16 +165,25 @@
     var verses = VERSES.filter(function (v) { return v.chapter === activeChapter; });
     var cards = '';
 
+    var t = UI[lang];
+
     if (verses.length === 0) {
-      cards = '<div class="verse-card" style="text-align:center; color: var(--muted);"><p>Chưa có dữ liệu cho phẩm này.</p></div>';
+      cards = '<div class="verse-card" style="text-align:center; color: var(--muted);"><p>' + escapeHtml(t.empty) + '</p></div>';
+    } else if (lang === 'en') {
+      cards = verses.map(function (v) {
+        return '<div class="verse-card">' +
+          '<div class="verse-num">' + t.verseLabel + v.number + '</div>' +
+          '<p class="verse-vi" lang="en">' + escapeHtml(v.en) + '</p>' +
+          '</div>';
+      }).join('');
     } else {
       cards = verses.map(function (v) {
         var isOpen = !!expanded[v.number];
         return '<div class="verse-card">' +
-          '<div class="verse-num">câu ' + v.number + '</div>' +
+          '<div class="verse-num">' + t.verseLabel + v.number + '</div>' +
           '<p class="verse-vi">' + escapeHtml(v.vi) + '</p>' +
           '<button class="verse-toggle" data-verse="' + v.number + '" aria-expanded="' + isOpen + '">' +
-            (isOpen ? 'Ẩn tiếng Anh' : 'Xem tiếng Anh') + '</button>' +
+            (isOpen ? t.hideEn : t.showEn) + '</button>' +
           (isOpen ? '<div class="verse-en" lang="en">' + escapeHtml(v.en) + '</div>' : '') +
           '</div>';
       }).join('');
@@ -162,13 +210,17 @@
       VERSES = data.verses;
     } catch (e) {
       app.innerHTML = '<div class="verse-card" style="text-align:center; color: var(--muted);">' +
-        '<p>Không tải được dữ liệu (verses.json).</p>' +
-        '<p>Nếu bạn mở tệp trực tiếp từ máy, hãy chạy <code>python3 -m http.server</code> trong thư mục này rồi mở <code>http://localhost:8000</code>.</p></div>';
+        '<p>' + escapeHtml(UI[lang].loadError) + '</p>' +
+        '<p>If opening this file directly, run <code>python3 -m http.server</code> in this folder, then open <code>http://localhost:8000</code>.</p></div>';
       return;
     }
     activeChapter = loadLastChapter();
     render();
   }
+
+  document.getElementById('lang-vi').addEventListener('click', function () { setLang('vi'); });
+  document.getElementById('lang-en').addEventListener('click', function () { setLang('en'); });
+  document.getElementById('lang-vi').classList.add('active');
 
   init();
 })();
