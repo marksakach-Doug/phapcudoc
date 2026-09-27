@@ -161,8 +161,7 @@
     chapterSelect += '</select></div>';
 
     var chapterMeta = CHAPTERS.filter(function (ch) { return ch.id === activeChapter; })[0];
-    var header = '<div class="chapter-title">' + escapeHtml(chapterMeta.title) + '</div>' +
-      '<div class="chapter-range">' + escapeHtml(chapterMeta.range) + '</div>';
+    var header = '<div class="chapter-range">' + escapeHtml(chapterMeta.range) + '</div>';
 
     var verses = VERSES.filter(function (v) { return v.chapter === activeChapter; });
     var cards = '';
